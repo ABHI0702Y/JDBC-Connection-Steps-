@@ -1,0 +1,20 @@
+package com.jsp.first;
+//	can I compile empty class block?yes
+//	will byte code be generate for empty class block?yes
+//	Can I execute empty class block?no,why>because of main method
+public class LoadingDriverClass {
+	public static void main(String[] args) {
+		// forName()---present in a class called Class(java.lang)
+		// public static method
+		//accept one string argument -fullyQualifiedClassification of DriverClass
+									//packagename.classname
+	    //throw an exception---ClassNotFoundException
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("Loading is done");
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

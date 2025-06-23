@@ -1,0 +1,3 @@
+Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/db_name", "username", "password");
+You don't need to manually Class.forName() for newer JDBC versions; it's done automatically.
