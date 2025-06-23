@@ -1,0 +1,1 @@
+Make sure to add the JDBC driver (usually a .jar file like mysql-connector-java-X.X.X.jar) to your project classpath.

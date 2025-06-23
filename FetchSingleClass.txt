@@ -1,0 +1,38 @@
+package com.jsp.first;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class FetchSingleData {
+	public static void main(String[] args) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/first-jdbc";
+			String user = "root";
+			String password = "W7301@jqir#";
+			Connection con = DriverManager.getConnection(url, user, password);
+			
+			Statement state = con.createStatement();
+			String query = "select * from sample where id = 1";
+			
+			state.execute(query);
+			ResultSet rs = state.getResultSet();
+			//System.out.println(rs);
+			//to shift cursor to [point to first row
+			rs.next();
+			//using getX(Column(Number) methods --X--datatype
+			System.out.println(rs.getInt(1));
+			System.out.println(rs.getString(2));
+			System.out.println(rs.getInt(3));
+			
+			con.close();
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

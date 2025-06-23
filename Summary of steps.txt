@@ -1,0 +1,8 @@
+✅ Summary of Steps:
+Step	Description
+1   :	Load JDBC driver (optional in JDBC 4.0+)
+2   :	Establish connection using DriverManager.getConnection()
+3   :	Create PreparedStatement for CRUD
+4   :	Execute SQL query (insert, select, update, delete)
+5   :	Process ResultSet (for SELECT)
+6   :	Close connection and resources
